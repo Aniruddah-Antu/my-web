@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Aniruddah Biswas is a web developer from Khulna, Bangladesh, working with PHP, Laravel and Node.js.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%91%A4%3C/text%3E%3C/svg%3E">
+<title>Aniruddah Biswas – Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F5F7FB;--surface:#FFFFFF;--ink:#101B33;--muted:#58647D;--line:#DCE2EE;--accent:#3563E9;--accent2:#0FA89A;--on-accent:#FFFFFF;--g1:rgba(53,99,233,.22);--g2:rgba(15,168,154,.2);
+  color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1220;--surface:#121B2E;--ink:#E8EEFA;--muted:#97A4BD;--line:#223049;--accent:#7099FF;--accent2:#3DD6C6;--on-accent:#0B1220;--g1:rgba(112,153,255,.22);--g2:rgba(61,214,198,.16);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1220;--surface:#121B2E;--ink:#E8EEFA;--muted:#97A4BD;--line:#223049;--accent:#7099FF;--accent2:#3DD6C6;--on-accent:#0B1220;--g1:rgba(112,153,255,.22);--g2:rgba(61,214,198,.16);color-scheme:dark}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 4.5rem);scroll-behavior:smooth;height:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100%;position:relative;overflow-x:hidden;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Figtree",system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.5rem;position:relative;z-index:1}
+.bg{position:absolute;inset:0 0 auto;height:52rem;overflow:hidden;pointer-events:none;z-index:0;
+  background-image:radial-gradient(var(--line) 1px,transparent 1.2px);background-size:28px 28px;
+  -webkit-mask-image:linear-gradient(#000 20%,transparent);mask-image:linear-gradient(#000 20%,transparent)}
+.blob{position:absolute;border-radius:50%;filter:blur(80px);animation:drift 16s ease-in-out infinite alternate}
+.b1{width:26rem;height:26rem;background:var(--g1);top:-6rem;left:-4rem}
+.b2{width:24rem;height:24rem;background:var(--g2);top:6rem;right:-5rem;animation-delay:-6s}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:4rem}
+.logo{display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:.65rem;background:var(--ink);color:var(--bg);font:800 1rem "Bricolage Grotesque",sans-serif;text-decoration:none}
+nav{display:flex;align-items:center;gap:1.4rem;font-weight:500}
+nav a{text-decoration:none;color:var(--muted)}nav a:hover{color:var(--ink)}
+nav a.cta{color:var(--on-accent);background:var(--accent);padding:.5rem 1.1rem;border-radius:.6rem;font-weight:600}
+#theme{width:2.4rem;height:2.4rem;border-radius:.65rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-size:1.1rem;cursor:pointer}
+@media(max-width:40rem){nav a:not(.cta){display:none}}
+.hero{display:grid;gap:3rem;padding:4.5rem 0 5.5rem;align-items:center}
+@media(min-width:60rem){.hero{grid-template-columns:1.2fr 1fr}}
+.status{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem .95rem;border:1px solid var(--line);background:var(--surface);border-radius:999px;color:var(--muted);font-size:.95rem}
+.status i{width:.55rem;height:.55rem;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 0 var(--accent2);animation:ping 2s infinite}
+h1{font:800 clamp(3rem,10vw,6.4rem)/.95 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.035em;margin:1.4rem 0 1rem}
+.ln{display:block;overflow:hidden;padding-bottom:.1em}
+.ln>span{display:block;animation:up .9s cubic-bezier(.2,.8,.2,1) both}
+.ln:nth-child(2)>span{animation-delay:.12s}
+.role{font:600 clamp(1.25rem,3vw,1.7rem)/1.3 "Bricolage Grotesque",system-ui,sans-serif;min-height:2.2rem;margin:0 0 1.2rem}
+.role b{color:var(--accent);font-weight:600}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:-.15em;margin-left:3px;animation:blink 1s steps(1) infinite}
+.lead{max-width:34rem;color:var(--muted);font-size:1.15rem;margin:0 0 2rem}
+.btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.btn{display:inline-block;padding:.85rem 1.6rem;border-radius:.65rem;font-weight:600;text-decoration:none;background:var(--accent);color:var(--on-accent);transition:translate .2s,box-shadow .2s}
+.btn.alt{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.btn:hover{translate:0 -2px;box-shadow:0 10px 24px -10px var(--accent)}
+.code{background:#0F1A30;color:#D7E1F5;border-radius:1rem;border:1px solid #26385A;box-shadow:0 30px 60px -30px rgba(10,20,50,.6);animation:float 6s ease-in-out infinite alternate;overflow:hidden}
+.dots{display:flex;gap:.45rem;padding:.8rem 1rem;border-bottom:1px solid #26385A}
+.dots i{width:.7rem;height:.7rem;border-radius:50%;background:#3A4C72}
+.code pre{margin:0;padding:1.2rem 1.3rem 1.4rem;font:500 .92rem/1.8 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;overflow-x:auto}
+.cl{display:block;opacity:0;animation:fade .5s forwards;animation-delay:calc(var(--i)*.16s + .9s)}
+.k{color:#8FB0FF}.s{color:#7EE5CF}.p{color:#7C8BAA}
+section{padding:4.5rem 0}
+h2{font:800 clamp(1.9rem,4vw,2.6rem)/1.1 "Bricolage Grotesque",system-ui,sans-serif;letter-spacing:-.02em;margin:0 0 .6rem}
+.sub{color:var(--muted);margin:0 0 2.4rem;max-width:36rem}
+.cards{display:grid;gap:1.25rem}
+@media(min-width:48rem){.cards{grid-template-columns:1fr 1fr}.card.wide{grid-column:1/-1}}
+.card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.7rem;overflow:hidden;transition:translate .25s,box-shadow .25s,border-color .25s}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));transform:scaleX(.18);transform-origin:left;transition:transform .5s}
+.card:hover{translate:0 -4px;border-color:var(--accent);box-shadow:0 22px 40px -26px var(--accent)}
+.card:hover::before{transform:scaleX(1)}
+.card h3{font:800 1.45rem/1.2 "Bricolage Grotesque",system-ui,sans-serif;margin:.4rem 0 .6rem}
+.card p{margin:0 0 1.1rem;color:var(--muted);max-width:40rem}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tags span,.skills li{background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--ink);padding:.25rem .8rem;border-radius:.5rem;font-size:.92rem;font-weight:500}
+.split{display:grid;gap:3rem}
+@media(min-width:56rem){.split{grid-template-columns:1fr 1.1fr}}
+.split p{color:var(--muted);margin:0 0 1rem;max-width:32rem}
+.tl{list-style:none;margin:0;padding:0 0 0 1.6rem;border-left:2px solid var(--line)}
+.tl li{position:relative;padding-bottom:2rem}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:calc(-1.6rem - 7px);top:.45rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.tl small{display:block;color:var(--accent);font-weight:600}
+.tl h3{font:800 1.2rem/1.3 "Bricolage Grotesque",system-ui,sans-serif;margin:.15rem 0 .3rem}
+.tl p{margin:0;color:var(--muted)}
+.sk{display:grid;gap:1.4rem}
+@media(min-width:48rem){.sk{grid-template-columns:1fr 1fr}}
+.grp{background:var(--surface);border:1px solid var(--line);border-radius:1rem;padding:1.4rem 1.5rem}
+.grp h3{font:800 1.05rem "Bricolage Grotesque",system-ui,sans-serif;margin:0 0 .9rem}
+.skills{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.contact{background:var(--ink);color:var(--bg);border-radius:1.4rem;padding:clamp(2rem,6vw,4rem);margin-bottom:4rem;position:relative;overflow:hidden}
+.contact p{max-width:32rem;opacity:.8;margin:0 0 1.6rem}
+.contact h2{margin-bottom:1rem}
+.mail{display:inline-block;font:800 clamp(1.2rem,4.6vw,2.4rem)/1.2 "Bricolage Grotesque",system-ui,sans-serif;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:7px;text-decoration-color:var(--accent2);word-break:break-all}
+.links{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:2rem}
+.links a{padding:.55rem 1.1rem;border:1px solid color-mix(in srgb,var(--bg) 35%,transparent);border-radius:.6rem;text-decoration:none;font-weight:500;transition:background .2s}
+.links a:hover{background:color-mix(in srgb,var(--bg) 16%,transparent)}
+footer{padding:0 0 3rem;color:var(--muted);font-size:.95rem}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@keyframes up{from{transform:translateY(105%)}to{transform:none}}
+@keyframes fade{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,40px) scale(1.15)}}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+@keyframes blink{50%{opacity:0}}
+@keyframes ping{70%{box-shadow:0 0 0 .6rem transparent}100%{box-shadow:0 0 0 0 transparent}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.cl{opacity:1}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+.vis{position:relative;padding-top:5.4rem}
+.photo{position:absolute;top:0;right:1.4rem;z-index:2;width:10.5rem;height:10.5rem;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 18px 40px -18px var(--accent);animation:float 6s ease-in-out infinite alternate;animation-delay:-3s}
+.photo img{display:block;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 20%;border:4px solid var(--bg);background:var(--surface)}
+button.btn{font:inherit;font-weight:600;cursor:pointer;border:1px solid transparent}
+button.btn.alt{border-color:var(--line)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<div class="bg" aria-hidden="true"><div class="blob b1"></div><div class="blob b2"></div></div>
+<header class="top"><div class="wrap bar">
+  <a class="logo" href="#top" aria-label="Home">AB</a>
+  <nav aria-label="Main"><a href="#work">Work</a><a href="#journey">Journey</a><a href="#skills">Skills</a><button id="theme" type="button" aria-label="Switch light or dark theme">◐</button><a class="cta" href="#contact">Contact</a></nav>
+</div></header>
+
+<main class="wrap" id="top">
+  <div class="hero">
+    <div>
+      <span class="status"><i></i>Open to new opportunities</span>
+      <h1><span class="ln"><span>Aniruddah</span></span><span class="ln"><span>Biswas</span></span></h1>
+      <p class="role">I’m a <b id="typed">Web Developer</b><span class="caret" aria-hidden="true"></span></p>
+      <p class="lead">I build robust, user-focused web applications with PHP, Laravel and Node.js. Based in Khulna, Bangladesh.</p>
+      <div class="btns"><a class="btn" href="#work">View my work</a><a class="btn alt" href="Aniruddah-Biswas-CV.pdf" download>Download CV</a></div>
+    </div>
+    <div class="vis"><div class="photo"><img src="data:image/jpeg;base64,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" width="266" height="264" alt="Portrait of Aniruddah Biswas" decoding="async"></div><div class="code" aria-hidden="true">
+      <div class="dots"><i></i><i></i><i></i></div>
+<pre><code><span class="cl" style="--i:0"><span class="k">Route</span><span class="p">::</span>get(<span class="s">'/developer'</span>, <span class="k">fn</span> () =&gt; [</span><span class="cl" style="--i:1">  <span class="s">'name'</span>  <span class="p">=&gt;</span> <span class="s">'Aniruddah Biswas'</span>,</span><span class="cl" style="--i:2">  <span class="s">'role'</span>  <span class="p">=&gt;</span> <span class="s">'Web Developer'</span>,</span><span class="cl" style="--i:3">  <span class="s">'stack'</span> <span class="p">=&gt;</span> [<span class="s">'PHP'</span>, <span class="s">'Laravel'</span>, <span class="s">'Node.js'</span>],</span><span class="cl" style="--i:4">  <span class="s">'study'</span> <span class="p">=&gt;</span> <span class="s">'MSc ICT, KUET'</span>,</span><span class="cl" style="--i:5">  <span class="s">'open'</span>  <span class="p">=&gt;</span> <span class="k">true</span>,</span><span class="cl" style="--i:6">]);</span></code></pre>
+    </div></div>
+  </div>
+
+  <section id="work">
+    <h2 class="rv">Selected work</h2>
+    <p class="sub rv">Projects I built, from backend APIs to full online stores.</p>
+    <div class="cards">
+      <article class="card wide rv"><h3>TutorPoint</h3><p>An education platform that connects students, parents and teachers. Users find tutors, post tuition requirements and manage educational services online.</p><div class="tags"><span>Flutter</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Cloudinary</span></div></article>
+      <article class="card rv"><h3>Girls fashion eCommerce</h3><p>An online fashion store where customers browse products, place orders and pay securely online.</p><div class="tags"><span>WordPress</span><span>WooCommerce</span><span>PHP</span><span>MySQL</span></div></article>
+      <article class="card rv"><h3>Aradha Core online courses</h3><p>Project-based backend work: RESTful APIs, authentication, course enrollment and note management.</p><div class="tags"><span>Node.js</span><span>Express.js</span><span>REST API</span><span>Database</span></div></article>
+    </div>
+  </section>
+
+  <section id="journey" class="split">
+    <div>
+      <h2 class="rv">About me</h2>
+      <p class="rv">I’m a detail-focused web developer with a four-year Bachelor’s degree in Computer Science and Engineering. I’m now pursuing an M.Sc. in Engineering in Information and Communication Technology (ICT) at KUET.</p>
+      <p class="rv">I’m skilled in PHP and build web applications with the Laravel framework. I want to bring strong technical skills and a passion for web development to a challenging, growth-oriented role.</p>
+    </div>
+    <ol class="tl">
+      <li class="rv"><small>2025 – Present</small><h3>MSc in ICT, KUET</h3><p>Khulna University of Engineering &amp; Technology. Coursework completed, thesis in progress.</p></li>
+      <li class="rv"><small>Project-based</small><h3>Backend Developer</h3><p>Built RESTful APIs, authentication, course enrollment and note management. Managed databases and kept APIs secure.</p></li>
+      <li class="rv"><small>2024</small><h3>BSc in Computer Science and Engineering</h3><p>North Western University, Khulna.</p></li>
+    </ol>
+  </section>
+
+  <section id="skills">
+    <h2 class="rv">Skills</h2>
+    <p class="sub rv">The tools I use to design, build and ship.</p>
+    <div class="sk">
+      <div class="grp rv"><h3>Backend</h3><ul class="skills"><li>PHP</li><li>Laravel</li><li>Node.js</li><li>Express.js</li></ul></div>
+      <div class="grp rv"><h3>Frontend</h3><ul class="skills"><li>React.js</li><li>Next.js</li><li>HTML &amp; CSS</li><li>Tailwind CSS</li></ul></div>
+      <div class="grp rv"><h3>Databases</h3><ul class="skills"><li>MySQL</li><li>PostgreSQL</li><li>MongoDB</li></ul></div>
+      <div class="grp rv"><h3>Languages</h3><ul class="skills"><li>PHP</li><li>Java</li><li>Python</li><li>C</li><li>C++</li></ul></div>
+      <div class="grp rv"><h3>Cloud &amp; DevOps</h3><ul class="skills"><li>AWS</li><li>CI/CD</li><li>Linux</li><li>Docker</li><li>Kubernetes</li></ul></div>
+    </div>
+  </section>
+
+  <section id="contact" style="padding-bottom:0">
+    <div class="contact rv">
+      <h2>Let’s work together</h2>
+      <p>I’m open to a challenging, growth-oriented role. Email is the quickest way to reach me.</p>
+      <a class="mail" href="mailto:aniruddahbiswas.dev@gmail.com">aniruddahbiswas.dev@gmail.com</a>
+      <div class="links"><a class="btn" href="Aniruddah-Biswas-CV.pdf" download>Download CV</a><a href="https://github.com/Aniruddah-Antu" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/AniruddahBiswas" target="_blank" rel="noopener">X</a><a href="https://www.linkedin.com/in/aniruddah-biswas/" target="_blank" rel="noopener">LinkedIn</a><a href="https://leetcode.com/u/Aniruddah_Biswas" target="_blank" rel="noopener">LeetCode</a></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">© 2026 Aniruddah Biswas</div></footer>
+
+<script>
+(function(){
+var root=document.documentElement;root.classList.add('js');
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var els=document.querySelectorAll('.rv');
+els.forEach(function(e){e.style.transitionDelay=Math.min([].indexOf.call(e.parentNode.children,e),5)*80+'ms'});
+if(rm||!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+else{var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});els.forEach(function(e){io.observe(e)})}
+var t=document.getElementById('typed');
+if(!rm){var words=['Web Developer','Laravel & PHP Builder','Node.js Backend Developer'],w=0,c=0,del=false;
+(function tick(){var s=words[w];c+=del?-1:1;t.textContent=s.slice(0,c);var d=del?35:80;
+if(!del&&c===s.length){del=true;d=1500}else if(del&&c===0){del=false;w=(w+1)%words.length;d=350}
+setTimeout(tick,d)})()}
+document.getElementById('theme').addEventListener('click',function(){
+var cur=root.getAttribute('data-theme');
+var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
+root.setAttribute('data-theme',dark?'light':'dark')});
+
+})();
+</script>
+</body>
+</html>
