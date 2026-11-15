@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -107,6 +107,15 @@ footer{padding:0 0 3rem;color:var(--muted);font-size:.95rem}
 button.btn{font:inherit;font-weight:600;cursor:pointer;border:1px solid transparent}
 button.btn.alt{border-color:var(--line)}
 [hidden]{display:none!important}
+#video{padding-top:0}
+.vbox{position:relative;aspect-ratio:16/9;border-radius:1.2rem;overflow:hidden;background:#0F1A30;border:1px solid var(--line);box-shadow:0 30px 60px -34px rgba(10,20,50,.7);cursor:pointer}
+.vbox video{display:block;width:100%;height:100%;object-fit:cover}
+.vhint{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;color:#fff;background:linear-gradient(rgba(8,14,28,.15),rgba(8,14,28,.55));transition:opacity .35s;pointer-events:none}
+.vplay{display:grid;place-items:center;width:4.6rem;height:4.6rem;border-radius:50%;background:var(--accent);color:var(--on-accent);font-size:1.5rem;padding-left:.2rem;box-shadow:0 0 0 0 var(--accent);animation:ping 2s infinite}
+.vhint b{font-weight:600}
+.vbox.playing .vhint{opacity:0}
+.vbar{position:absolute;left:0;bottom:0;height:4px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.vmute{position:absolute;right:1rem;bottom:1rem;z-index:2;padding:.4rem .9rem;border-radius:.5rem;border:1px solid rgba(255,255,255,.35);background:rgba(8,14,28,.6);color:#fff;font:600 .85rem "Figtree",sans-serif;cursor:pointer}
 </style>
 </head>
 <body>
@@ -130,6 +139,17 @@ button.btn.alt{border-color:var(--line)}
 <pre><code><span class="cl" style="--i:0"><span class="k">Route</span><span class="p">::</span>get(<span class="s">'/developer'</span>, <span class="k">fn</span> () =&gt; [</span><span class="cl" style="--i:1">  <span class="s">'name'</span>  <span class="p">=&gt;</span> <span class="s">'Aniruddah Biswas'</span>,</span><span class="cl" style="--i:2">  <span class="s">'role'</span>  <span class="p">=&gt;</span> <span class="s">'Web Developer'</span>,</span><span class="cl" style="--i:3">  <span class="s">'stack'</span> <span class="p">=&gt;</span> [<span class="s">'PHP'</span>, <span class="s">'Laravel'</span>, <span class="s">'Node.js'</span>],</span><span class="cl" style="--i:4">  <span class="s">'study'</span> <span class="p">=&gt;</span> <span class="s">'MSc ICT, KUET'</span>,</span><span class="cl" style="--i:5">  <span class="s">'open'</span>  <span class="p">=&gt;</span> <span class="k">true</span>,</span><span class="cl" style="--i:6">]);</span></code></pre>
     </div></div>
   </div>
+
+  <section id="video">
+    <h2 class="rv">Watch my intro</h2>
+    <p class="sub rv">Hover over the video to play it. On a phone, tap to play or pause.</p>
+    <div class="vbox rv" id="vbox">
+      <video id="vid" src="intro.mp4#t=0.1" muted playsinline preload="metadata" aria-label="Introduction video of Aniruddah Biswas"></video>
+      <div class="vhint" aria-hidden="true"><span class="vplay">▶</span><b>Hover to play</b></div>
+      <button class="vmute" id="vmute" type="button">Sound off</button>
+      <div class="vbar" id="vbar"></div>
+    </div>
+  </section>
 
   <section id="work">
     <h2 class="rv">Selected work</h2>
@@ -194,6 +214,21 @@ document.getElementById('theme').addEventListener('click',function(){
 var cur=root.getAttribute('data-theme');
 var dark=cur?cur==='dark':matchMedia('(prefers-color-scheme:dark)').matches;
 root.setAttribute('data-theme',dark?'light':'dark')});
+var vb=document.getElementById('vbox'),v=document.getElementById('vid');
+if(vb&&v){
+var bar=document.getElementById('vbar'),mb=document.getElementById('vmute');
+var canHover=matchMedia('(hover:hover)').matches&&!rm;
+function vplay(){var r=v.play();if(r&&r.catch)r.catch(function(){})}
+vb.addEventListener('mouseenter',function(){if(canHover)vplay()});
+vb.addEventListener('mouseleave',function(){if(canHover)v.pause()});
+vb.addEventListener('click',function(){if(!canHover){v.paused?vplay():v.pause()}});
+v.addEventListener('play',function(){vb.classList.add('playing')});
+v.addEventListener('pause',function(){vb.classList.remove('playing')});
+v.addEventListener('timeupdate',function(){if(v.duration)bar.style.width=(v.currentTime/v.duration*100)+'%'});
+v.addEventListener('ended',function(){v.currentTime=0;bar.style.width='0'});
+mb.addEventListener('click',function(e){e.stopPropagation();v.muted=!v.muted;mb.textContent=v.muted?'Sound off':'Sound on'});
+v.addEventListener('error',function(){document.getElementById('video').hidden=true});
+}
 
 })();
 </script>
